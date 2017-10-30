@@ -1,7 +1,7 @@
 all: kernel
 
 kernel: kasm.o kc.o
-	ld -macosx_version_min 10.12 -arch i386 -o kernel kasm.o kc.o
+	ld -m elf_i386 -T link.ld -o kernel kasm.o kc.o
 
 kasm.o: kernel.asm
 	nasm -f elf kernel.asm -o kasm.o
@@ -11,3 +11,4 @@ kc.o: kernel.c
 
 clean:
 	rm *.o
+	rm kernel
