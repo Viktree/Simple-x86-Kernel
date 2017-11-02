@@ -6,9 +6,9 @@ kernel: kasm.o kc.o
 kasm.o: kernel.asm
 	nasm -f elf kernel.asm -o kasm.o
 
-kc.o: kernel.c
+kc.o: kernel.c kernel.h byte_color_map.h keyboard_map.h
 	gcc -m32 -c kernel.c -o kc.o
 
 clean:
-	rm *.o
-	rm kernel
+	rm -f *.o
+	rm -f kernel
