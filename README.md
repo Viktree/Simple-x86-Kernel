@@ -10,8 +10,8 @@ Following guidelines from [this](http://arjunsreedharan.org/post/82710718100/ker
 6. Add the following section to the grub configuration. The grub configuration can be edited by running `sudo vim /boot/grub/grub.cfg`. Add the following lines to the grub:
 
 ```bash
-menuentry 'kernel 701' {
+menuentry 'kernel 01' {
 	set root='hd0,msdos1'
-	multiboot /boot/kernel-701 ro
+	multiboot /boot/kernel-01 ro
 }
 ```
